@@ -13,19 +13,18 @@ class Create extends Component
 
     public function mount(User $user)
     {
-        $this->form->setUserModel($user);
-    }
+        $this->form->setUserModel($user);    }
 
     public function save()
     {
         $this->form->store();
 
-        return $this->redirectRoute('users.index', navigate: true);
+        return redirect()->route('users.index'); // Correcting the redirection method
     }
 
     #[Layout('layouts.app')]
     public function render()
     {
-        return view('livewire.user.create');
+        return view('livewire.user.create')->layout('layouts.app');
     }
 }

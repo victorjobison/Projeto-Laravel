@@ -15,7 +15,6 @@ class UserForm extends Form
     public $profile_photo_path = '';
     public $two_factor_secret = '';
     public $two_factor_recovery_codes = '';
-    public $two_factor_confirmed_at = '';
 
     public function rules(): array
     {
@@ -38,7 +37,6 @@ class UserForm extends Form
         $this->profile_photo_path = $this->userModel->profile_photo_path;
         $this->two_factor_secret = $this->userModel->two_factor_secret;
         $this->two_factor_recovery_codes = $this->userModel->two_factor_recovery_codes;
-        $this->two_factor_confirmed_at = $this->userModel->two_factor_confirmed_at;
     }
 
     public function store(): void
