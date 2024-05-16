@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+
 [x-cloak] {
     display: none;
+}
+.bg-gradient::after {
+    background: radial-gradient(600px circle at var(--mouse-x) var(--mouse-y), #FFA857, transparent 20%);
+}
+body{
+    background: linear-gradient(0deg, rgba(255,168,87,0.2511379551820728) 0%, rgba(255,168,87,0.04945728291316531) 100%);
 }
