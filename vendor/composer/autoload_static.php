@@ -595,6 +595,7 @@ class ComposerStaticInitda9b7a1dc1dd923105198c572cc7df8d
         'App\\Actions\\Jetstream\\UpdateTeamName' => __DIR__ . '/../..' . '/app/Actions/Jetstream/UpdateTeamName.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Requests\\AppointmentRequest' => __DIR__ . '/../..' . '/app/Http/Requests/AppointmentRequest.php',
+        'App\\Http\\Requests\\UserRequest' => __DIR__ . '/../..' . '/app/Http/Requests/UserRequest.php',
         'App\\Livewire\\Appointments\\Create' => __DIR__ . '/../..' . '/app/Livewire/Appointments/Create.php',
         'App\\Livewire\\Appointments\\Edit' => __DIR__ . '/../..' . '/app/Livewire/Appointments/Edit.php',
         'App\\Livewire\\Appointments\\Index' => __DIR__ . '/../..' . '/app/Livewire/Appointments/Index.php',
