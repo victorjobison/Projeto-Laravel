@@ -11,19 +11,17 @@ class UserForm extends Form
     
     public $name = '';
     public $email = '';
+    public $password = '';
     public $current_team_id = '';
-    public $profile_photo_path = '';
-    public $two_factor_secret = '';
-    public $two_factor_recovery_codes = '';
+  
 
     public function rules(): array
     {
         return [
 			'name' => 'required|string',
-			'email' => 'required|string',
-			'profile_photo_path' => 'string',
-			'two_factor_secret' => 'string',
-			'two_factor_recovery_codes' => 'string',
+            'email' => 'required|string|email|unique:users',
+            'password' => 'required|string|min:8',
+            'current_team_id' => 'required|int',
         ];
     }
 
@@ -33,10 +31,9 @@ class UserForm extends Form
         
         $this->name = $this->userModel->name;
         $this->email = $this->userModel->email;
+        $this->password = $this->userModel->password;
         $this->current_team_id = $this->userModel->current_team_id;
-        $this->profile_photo_path = $this->userModel->profile_photo_path;
-        $this->two_factor_secret = $this->userModel->two_factor_secret;
-        $this->two_factor_recovery_codes = $this->userModel->two_factor_recovery_codes;
+       
     }
 
     public function store(): void
