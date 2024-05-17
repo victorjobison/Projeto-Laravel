@@ -1,1 +1,0 @@
-<img src="{{ asset('img/fundologin.png') }}" alt="">
