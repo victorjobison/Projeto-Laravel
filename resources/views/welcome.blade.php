@@ -100,11 +100,10 @@
                                             <div>
 
                                                 <p class="text-3xl font-semibold tracking-tight text-[#201515] sm:text-5xl">
-                                                Space Management Software
+                                                Appointments Management Software
                                                 </p>
                                                 <p class="max-w-xl mt-4 text-base tracking-tight text-gray-600">
-                                                Use this paragraph to share information about your company or products. Make it engaging and interesting, and showcase your brand's personality. Thanks for visiting our website!
-                                                </p>
+                                                Appointments Management Software is a digital tool that facilitates scheduling and tracking appointments. It allows clients to book and manage their own appointments online, sends automatic reminders to reduce no-shows, and integrates with popular calendars. Additionally, it maintains detailed client records and offers analytical reports to improve service efficiency.                                                </p>
                                             </div>
                                     
                                         </div>
