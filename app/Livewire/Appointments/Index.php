@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Livewire\Appointments;
 
 use App\Models\Appointment;
@@ -11,14 +10,20 @@ use Livewire\WithPagination;
 class Index extends Component
 {
     use WithPagination;
+ 
+    public $search;
+
+    public function updatingSearch()
+    {
+        $this->resetPage();
+    }
 
     #[Layout('layouts.app')]
     public function render(): View
-    {
-        $appointments = Appointment::paginate();
-
-        return view('livewire.appointment.index', compact('appointments'))
-            ->with('i', $this->getPage() * $appointments->perPage());
+    {  
+        return view('livewire.appointment.index', [
+            'appointments' => Appointment::search('title', $this->search)->paginate(5),
+        ]);
     }
 
     public function delete(Appointment $appointment)

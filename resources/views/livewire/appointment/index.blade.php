@@ -8,13 +8,25 @@
     <div class="max-w-full mx-auto sm:px-6 lg:px-8 space-y-6">
         <div class="p-4 sm:p-8 bg-white shadow sm:rounded-lg">
             <div class="w-full">
-                <div class="sm:flex sm:items-center">
+                <div class="sm:flex sm:items-center flex items-center justify-center">
                     <div class="sm:flex-auto">
                         <h1 class="text-base font-semibold leading-6 text-gray-900">{{ __('Appointments') }}</h1>
                         <p class="mt-2 text-sm text-gray-700">A list of all the {{ __('Appointments') }}.</p>
                     </div>
+                    <div class="sm:flex-auto ">
+                        <div class="flex">
+                            <x-input type="text" placeholder="Search" wire:model.live="search" class="w-full form control"></x-input>
+                            <div class="flex items-center justify-center border-gray-300 bg-white p-5 focus:outline-none">
+                                <svg viewBox="0 0 20 20" aria-hidden="true" class="pointer-events-none absolute w-5 fill-gray-500 transition">
+                                    <path d="M16.72 17.78a.75.75 0 1 0 1.06-1.06l-1.06 1.06ZM9 14.5A5.5 5.5 0 0 1 3.5 9H2a7 7 0 0 0 7 7v-1.5ZM3.5 9A5.5 5.5 0 0 1 9 3.5V2a7 7 0 0 0-7 7h1.5ZM9 3.5A5.5 5.5 0 0 1 14.5 9H16a7 7 0 0 0-7-7v1.5Zm3.89 10.45 3.83 3.83 1.06-1.06-3.83-3.83-1.06 1.06ZM14.5 9a5.48 5.48 0 0 1-1.61 3.89l1.06 1.06A6.98 6.98 0 0 0 16 9h-1.5Zm-1.61 3.89A5.48 5.48 0 0 1 9 14.5V16a6.98 6.98 0 0 0 4.95-2.05l-1.06-1.06Z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        
+                    </div>
     
                     <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
+                        
                         <a type="button" wire:navigate href="{{ route('appointments.create') }}"
                             class="group relative overflow-hidden bg-purple-600 focus:ring-4 focus:ring-purble-300 inline-flex items-center px-7 py-2.5 rounded-lg text-white justify-center">
                             <span class="z-40 flex justify-center">
@@ -30,6 +42,7 @@
                 <div class="flow-root">
                     <div class="mt-8 overflow-x-auto">
                         <div class="inline-block min-w-full py-2 align-middle">
+                            
                             <table class="w-full divide-y divide-gray-300">
                                 <thead>
                                 <tr>
@@ -44,9 +57,10 @@
                                 </tr>
                                 </thead>
                                 <tbody class="divide-y divide-gray-200 bg-white">
+                                    
                                 @foreach ($appointments as $appointment)
                                     <tr class="even:bg-gray-50" wire:key="{{ $appointment->id }}">
-                                        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-semibold text-gray-900">{{ ++$i }}</td>
+                                        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-semibold text-gray-900">{{ $appointment->id}}</td>
                                         
 										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $appointment->title }}</td>
 										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $appointment->description }}</td>
@@ -82,7 +96,7 @@
                             </table>
 
                             <div class="mt-4 px-4">
-                                {!! $appointments->withQueryString()->links() !!}
+                            {{ $appointments->links() }}
                             </div>
                         </div>
                     </div>

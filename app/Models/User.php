@@ -65,4 +65,8 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    public static function search($field, $keyword)
+    {
+        return self::where($field, 'like', '%' . $keyword . '%');
+    }
 }

@@ -25,4 +25,5 @@ Route::middleware([
     Route::get('/users/show/{user}', \App\Livewire\Users\Show::class)->name('users.show');
     Route::get('/users/update/{user}', \App\Livewire\Users\Edit::class)->name('users.edit');
 
+    
 });

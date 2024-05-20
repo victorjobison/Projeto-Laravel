@@ -11,14 +11,20 @@ use Livewire\WithPagination;
 class Index extends Component
 {
     use WithPagination;
+ 
+    public $search;
+
+    public function updatingSearch()
+    {
+        $this->resetPage();
+    }
 
     #[Layout('layouts.app')]
     public function render(): View
-    {
-        $users = User::paginate();
-
-        return view('livewire.user.index', compact('users'))
-            ->with('i', $this->getPage() * $users->perPage());
+    {  
+        return view('livewire.user.index', [
+            'users' => User::search('name', $this->search)->paginate(5),
+        ]);
     }
 
     public function delete(User $user)
