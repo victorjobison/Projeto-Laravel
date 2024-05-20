@@ -32,7 +32,7 @@ class Appointment extends Model
 
     public static function search($field, $keyword)
     {
-        return self::where($field, 'like', '%' . $keyword . '%');
+        return self::where($field, 'ilike', '%' . $keyword . '%');
     }
 
 }
