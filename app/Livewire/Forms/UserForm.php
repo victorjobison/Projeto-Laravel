@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Livewire\Forms;
 
 use App\Models\User;
@@ -17,9 +16,12 @@ class UserForm extends Form
 
     public function rules(): array
     {
+        // Se estiver editando, ignore o email atual do usuário
+        $emailRule = $this->userModel ? 'required|string|email|unique:users,email,' . $this->userModel->id : 'required|string|email|unique:users';
+
         return [
 			'name' => 'required|string',
-            'email' => 'required|string|email|unique:users',
+            'email' => $emailRule,
             'password' => 'required|string|min:8',
             'current_team_id' => 'required|int',
         ];
@@ -32,8 +34,8 @@ class UserForm extends Form
         $this->name = $this->userModel->name;
         $this->email = $this->userModel->email;
         $this->password = $this->userModel->password;
+        // Evite definir a senha aqui para não exibir a senha em texto simples
         $this->current_team_id = $this->userModel->current_team_id;
-       
     }
 
     public function store(): void
@@ -50,3 +52,4 @@ class UserForm extends Form
         $this->reset();
     }
 }
+

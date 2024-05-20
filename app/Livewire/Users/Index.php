@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Livewire\Users;
 
 use App\Models\User;
@@ -23,7 +22,9 @@ class Index extends Component
     public function render(): View
     {  
         return view('livewire.user.index', [
-            'users' => User::search('name', $this->search)->paginate(5),
+            'users' => User::search('name', $this->search)
+                          ->orderBy('name') // Ordena pelo campo 'id'
+                          ->paginate(5),
         ]);
     }
 

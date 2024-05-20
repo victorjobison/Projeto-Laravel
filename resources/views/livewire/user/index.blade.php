@@ -38,32 +38,29 @@
                 <div class="flow-root">
                     <div class="mt-8 overflow-x-auto">
                         <div class="inline-block min-w-full py-2 align-middle">
-                            <table class="w-full divide-y divide-gray-300">
-                                <thead>
+                            <table class="w-full divide-y divide-gray-300 ">
+                                <thead >
                                 <tr>
-                                    <th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">No</th>
-                                    <th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">Profile Photo Path</th>
-									<th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">Name</th>
-									<th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">Email</th>
-									<th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">Current Team Id</th>
-									<th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">Actions</th>
+                                    <th scope="col" class="py-3 pl-4 pr-3 text-center text-xs font-semibold uppercase tracking-wide text-gray-500">Profile Photo Path</th>
+									<th scope="col" class="py-3 pl-4 pr-3 text-center text-xs font-semibold uppercase tracking-wide text-gray-500">Name</th>
+									<th scope="col" class="py-3 pl-4 pr-3 text-center text-xs font-semibold uppercase tracking-wide text-gray-500">Email</th>
+									<th scope="col" class="py-3 pl-4 pr-3 text-center text-xs font-semibold uppercase tracking-wide text-gray-500">Current Team Id</th>
+									<th scope="col" class="py-3 pl-4 pr-3 text-center text-xs font-semibold uppercase tracking-wide text-gray-500">Actions</th>
 
-                                    <th scope="col" class="px-3 py-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500"></th>
                                 </tr>
                                 </thead>
                                 <tbody class="divide-y divide-gray-200 bg-white">
                                 @foreach ($users as $user)
-                                    <tr class="even:bg-gray-50" wire:key="{{ $user->id }}">
-                                        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-semibold text-gray-900">{{ $user->id }}</td>
-                                        <td class="whitespace-nowrap  px-3 py-4 text-sm text-gray-500">
+                                    <tr class="even:bg-gray-50 " wire:key="{{ $user->id }}">
+                                        <td class="whitespace-nowrap  px-3 py-4 text-sm text-gray-500 flex justify-center ">
                                             <img src="{{ $user->profile_photo_url }}" alt="User's Profile Photo" class="h-12 w-12 rounded-full object-cover">
                                         </td>
-										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $user->name }}</td>
-										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $user->email }}</td>
-										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $user->current_team_id }}</td>
+										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 text-center">{{ $user->name }}</td>
+										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 text-center">{{ $user->email }}</td>
+										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 text-center">{{ $user->current_team_id }}</td>
                                         
 
-                                        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900">
+                                        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 text-center">
                                             <a wire:navigate href="{{ route('users.show', $user->id) }}" >
                                                 <button class="middle none center py-1 px-1 bg-blue-500 rounded-xl hover:rounded-3xl hover:bg-blue-600 transition-all duration-300 text-white"data-ripple-light="true" >
                                                     <img src="{{ asset('img/visualizar.png') }}" alt="">
