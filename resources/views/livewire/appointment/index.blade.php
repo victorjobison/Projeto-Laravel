@@ -45,13 +45,12 @@
                             
                             <table class="w-full divide-y divide-gray-300">
                                 <thead>
-                                <tr>
-                                    <th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">#</th>
-                                    
+                                <tr>                                    
 									<th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">Title</th>
 									<th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">Description</th>
 									<th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">Date</th>
 									<th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">Time</th>
+									<th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">Created At</th>
 
                                     <th scope="col" class="px-3 py-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">Actions</th>
                                 </tr>
@@ -60,12 +59,12 @@
                                     
                                 @foreach ($appointments as $appointment)
                                     <tr class="even:bg-gray-50" wire:key="{{ $appointment->id }}">
-                                        <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-semibold text-gray-900">{{ $appointment->id}}</td>
-                                        
+                                    
 										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $appointment->title }}</td>
 										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $appointment->description }}</td>
 										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $appointment->date }}</td>
 										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $appointment->time }}</td>
+										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $appointment->created_at }}</td>
 
                                         <td class="whitespace-nowrap py-4 pl-4 pr-4 text-sm font-medium text-gray-900">
                                             <a wire:navigate href="{{ route('appointments.show', $appointment->id) }}" >

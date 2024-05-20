@@ -23,12 +23,11 @@ class Index extends Component
     {  
         return view('livewire.appointment.index', [
             'appointments' => Appointment::search('title', $this->search)
-                          ->orderBy('id') // Ordena pelo campo 'id'
+                          ->orderBy('title') // Ordena pelo campo 'id'
                           ->paginate(5),
         ]);
         
     }
-
     public function delete(Appointment $appointment)
     {
         $appointment->delete();

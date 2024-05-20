@@ -18,7 +18,7 @@ class AppointmentForm extends Form
     {
         return [
 			'title' => 'required|string',
-			'description' => 'required|string',
+			'description' => 'nullable|string',
 			'date' => 'required',
 			'time' => 'required',
         ];
