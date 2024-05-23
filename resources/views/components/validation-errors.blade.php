@@ -1,11 +1,11 @@
 @if ($errors->any())
     <div class="max-px-5">
         <div {{ $attributes }}>
-            <ul class="px-5 text-sm text-red-600 list-disc list-inside">
-                @foreach ($errors->all() as $error)
-                    <li>{{ $error }}</li>
-                @endforeach
-            </ul>
+            @foreach ($errors->all() as $error)
+            <p class="block font-medium text-sm text-red-700">
+                {{ $error }}
+            </p>
+            @endforeach
         </div>
     </div>
     

@@ -9,10 +9,6 @@
 .bg-gradient::after {
     background: radial-gradient(500px circle at var(--mouse-x) var(--mouse-y), #FFA857, transparent 20%);
 }
-.bg-fundo{
-    background: linear-gradient(0deg, rgba(255,168,87,0.2511379551820728) 0%, rgba(255,168,87,0.04945728291316531) 100%);
-    background-size: cover;
-}
 .classTest::-webkit-scrollbar {
     display: none !important;   
 }

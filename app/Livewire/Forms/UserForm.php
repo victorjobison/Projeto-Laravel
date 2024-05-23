@@ -17,11 +17,10 @@ class UserForm extends Form
     public function rules(): array
     {
         // Se estiver editando, ignore o email atual do usuário
-        $emailRule = $this->userModel ? 'required|string|email|unique:users,email,' . $this->userModel->id : 'required|string|email|unique:users';
 
         return [
 			'name' => 'required|string',
-            'email' => $emailRule,
+            'email' => 'string|email',
             'password' => 'required|string|min:8',
             'current_team_id' => 'required|int',
         ];

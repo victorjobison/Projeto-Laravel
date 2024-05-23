@@ -3,7 +3,7 @@
         <x-authentication-card-logo />
     </x-slot>
     <!-- Creat By Joker Banny -->
-    <div class="min-h-screen bg-fundo flex justify-center items-center">
+    <div class="min-h-screen bg-gradient-to-t from-orange-200 to-stone-50 flex justify-center items-center">
         <div class="absolute w-48 h-48 rounded-xl bg-orange-300 -top-0 -left-16 z-0 transform rotate-45 hidden md:block"></div>
         <div class="absolute w-48 h-48 rounded-xl bg-orange-300 -bottom-0 -right-0 transform rotate-12 hidden md:block"></div>
         @session('status')
@@ -11,7 +11,7 @@
                 {{ $value }}
             </div>
         @endsession
-        <form class=" py-12 px-12 bg-white rounded-2xl shadow-xl z-20" method="POST" action="{{ route('register') }}">
+        <form class="w-96 h-46 py-12 px-12 bg-white rounded-2xl shadow-xl z-20" method="POST" action="{{ route('register') }}">
             @csrf
             <div>
                 <h1 class="text-3xl font-bold text-center mb-4 cursor-pointer flex justify-center">
@@ -30,7 +30,7 @@
                 <x-label for="password_confirmation" value="{{ __('Confirme a Senha') }}" />
                 <x-input id="password_confirmation" placeholder="Confirme a Senha" class="block mt-1 w-full" type="password" name="password_confirmation" required autocomplete="new-password" />
                             
-                <x-validation-errors class="mb-4" />
+                <x-validation-errors class="mb-4 text-center" />
             </div>
 
             @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())

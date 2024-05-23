@@ -1,6 +1,6 @@
 <x-guest-layout>
     <!-- Creat By Joker Banny -->
-    <div class="min-h-screen h-full bg-fundo flex justify-center items-center bottom-0 ">
+    <div class="min-h-screen h-full bg-gradient-to-t from-orange-200 to-orange-50 flex justify-center items-center bottom-0 ">
         <div class="absolute w-48 h-48 rounded-xl bg-orange-300 -top-0 -left-16 z-0 transform rotate-45 hidden md:block"></div>
         <div class="absolute w-48 h-48 rounded-xl bg-orange-300 -bottom-0 -right-0 transform rotate-12  md:block"></div>
         @session('status')

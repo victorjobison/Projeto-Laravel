@@ -13,7 +13,8 @@ class Create extends Component
 
     public function mount(User $user)
     {
-        $this->form->setUserModel($user);    }
+        $this->form->setUserModel($user);
+    }
 
     public function save()
     {
@@ -25,6 +26,6 @@ class Create extends Component
     #[Layout('layouts.app')]
     public function render()
     {
-        return view('livewire.user.create')->layout('layouts.app');
+        return view('livewire.user.create');
     }
 }

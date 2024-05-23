@@ -41,7 +41,7 @@
                             <table class="w-full divide-y divide-gray-300 ">
                                 <thead >
                                 <tr>
-                                    <th scope="col" class="py-3 pl-4 pr-3 text-center text-xs font-semibold uppercase tracking-wide text-gray-500">Profile Photo Path</th>
+                                    <th scope="col" class="py-3 pl-4 pr-3 text-center text-xs font-semibold uppercase tracking-wide text-gray-500">Profile Photo</th>
 									<th scope="col" class="py-3 pl-4 pr-3 text-center text-xs font-semibold uppercase tracking-wide text-gray-500">Name</th>
 									<th scope="col" class="py-3 pl-4 pr-3 text-center text-xs font-semibold uppercase tracking-wide text-gray-500">Email</th>
 									<th scope="col" class="py-3 pl-4 pr-3 text-center text-xs font-semibold uppercase tracking-wide text-gray-500">Current Team Id</th>

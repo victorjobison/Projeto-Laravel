@@ -11,7 +11,7 @@
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
         @vite(['resources/css/app.css','resources/js/app.js'])
     </head>
-    <body class="bg-fundo">
+    <body class="bg-gradient-to-t from-orange-200 to-stone-50">
         <div class=" font-sans w-full min-h-screen m-0">
             <div class="bg-white shadow">
                 <div class="container mx-auto px-4">

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Dashboard;
 
 Route::get('/', function () {
     return view('welcome');
@@ -11,9 +12,8 @@ Route::middleware([
     config('jetstream.auth_session'),
     'verified',
 ])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
+    Route::get('/dashboard', [Dashboard::class, 'index'])->name('dashboard');
+
 
     Route::get('/appointments', \App\Livewire\Appointments\Index::class)->name('appointments.index');
     Route::get('/appointments/create', \App\Livewire\Appointments\Create::class)->name('appointments.create');
