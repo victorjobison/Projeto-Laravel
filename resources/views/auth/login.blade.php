@@ -24,9 +24,18 @@
             <div class="space-y-4">
                 <x-label for="email" value="{{ __('Email') }}" />
                 <x-input  placeholder="Email" class="block text-sm py-3 px-4 rounded-lg w-full border outline-purple-500" type="email" name="email" :value="old('email')" required autocomplete="username"  />
+                @error('name')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
                 <x-label for="password" value="{{ __('Senha') }}" />
                 <x-input type="password" name="password" required autocomplete="current-password"  placeholder="Senha" class="block text-sm py-3 px-4 rounded-lg w-full border outline-purple-500" />
-            
+                @error('password')
+                    <span class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
             </div>
 
             @if (Route::has('password.request'))

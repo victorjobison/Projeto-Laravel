@@ -125,50 +125,47 @@
             </div>
         </div>
     </div>
-    <!-- Script para las gráficas -->
-<script>
-    var newUsersCount = {{ $newUsersCount }};
-    var registeredUsersCount = {{ $registeredUsersCount }};
-    var newAppointmentCount = {{ $newAppointmentCount }};
-    var registeredAppointmentCount = {{ $registeredAppointmentCount }};
-    // Gráfica de Usuarios
-    var usersChart = new Chart(document.getElementById('usersChart'), {
-        type: 'doughnut',
-        data: {
-            labels: ['Novos', 'Registrados'],
-            datasets: [{
-                data: [newUsersCount, registeredUsersCount - newUsersCount],
-                backgroundColor: ['#00F0FF', '#8B8B8D'],
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            legend: {
-                position: 'bottom'
-            }
-        }
-    });
-
-    var commercesChart = new Chart(document.getElementById('appointmentChart'), {
-        type: 'doughnut',
-        data: {
-            labels: ['Novos', 'Registrados'],
-            datasets: [{
-                data: [newAppointmentCount, registeredAppointmentCount - newAppointmentCount],
-                backgroundColor: ['#FEC500', '#8B8B8D'],
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            legend: {
-                position: 'bottom' 
-            }
-        }
-    });
-
     
+    <script>
+        var newUsersCount = {{ $newUsersCount }};
+        var registeredUsersCount = {{ $registeredUsersCount }};
+        var newAppointmentCount = {{ $newAppointmentCount }};
+        var registeredAppointmentCount = {{ $registeredAppointmentCount }};
+        // Gráfica de Usuarios
+        var usersChart = new Chart(document.getElementById('usersChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Novos', 'Registrados'],
+                datasets: [{
+                    data: [newUsersCount, registeredUsersCount - newUsersCount],
+                    backgroundColor: ['#00F0FF', '#8B8B8D'],
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                legend: {
+                    position: 'bottom'
+                }
+            }
+        });
 
-</script>
+        var commercesChart = new Chart(document.getElementById('appointmentChart'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Novos', 'Registrados'],
+                datasets: [{
+                    data: [newAppointmentCount, registeredAppointmentCount - newAppointmentCount],
+                    backgroundColor: ['#FEC500', '#8B8B8D'],
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                legend: {
+                    position: 'bottom' 
+                }
+            }
+        });
+    </script>
 </x-app-layout>

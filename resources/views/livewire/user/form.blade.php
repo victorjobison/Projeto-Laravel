@@ -11,7 +11,7 @@
     </div>
     <div>
         <x-label for="password" :value="__('Password')"/>
-        <x-input wire:model="form.password" id="password" name="password" type="password" :value="old('email')" class="mt-1 block w-full" autocomplete="password" required placeholder="Password"/>
+        <x-input wire:model="form.password" id="password" name="password" type="password" :value="old('password')" class="mt-1 block w-full" autocomplete="password" required placeholder="Password"/>
        
     </div>
     <div>
