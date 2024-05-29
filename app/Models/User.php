@@ -69,4 +69,8 @@ class User extends Authenticatable
     {
         return self::where($field, 'ilike', '%' . $keyword . '%');
     }
+    public function user()
+    {
+        return $this->hasMany(User::class);
+    }
 }

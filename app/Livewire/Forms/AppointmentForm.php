@@ -13,6 +13,13 @@ class AppointmentForm extends Form
     public $description = '';
     public $date = '';
     public $time = '';
+    public $time_start = '';
+    public $time_end = '';
+    public $status = '';
+    public $category = '';
+    public $frequency = '';
+    public $id_user = '';
+    public $name_user = '';
 
     public function rules(): array
     {
@@ -21,9 +28,15 @@ class AppointmentForm extends Form
 			'description' => 'nullable|string',
 			'date' => 'required',
 			'time' => 'required',
+			/* 'time_start' => 'nullable',
+			'time_end' => 'nullable',
+			'status' => 'required',
+			'category' => 'required',
+			'frequency' => 'nullable',
+			'id_user' => 'required',
+			'name_user' => 'required', */
         ];
     }
-
     public function setAppointmentModel(Appointment $appointmentModel): void
     {
         $this->appointmentModel = $appointmentModel;

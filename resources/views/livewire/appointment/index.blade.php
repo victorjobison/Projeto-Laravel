@@ -15,14 +15,15 @@
                     </div>
                     <div class="sm:flex-auto ">
                         <div class="flex">
-                            <x-input type="text" placeholder="Search" wire:model.live="search" class="form control"></x-input>
-                            <div class="flex items-center justify-center border-gray-300 bg-white p-5 focus:outline-none">
-                                <svg viewBox="0 0 20 20" aria-hidden="true" class="pointer-events-none absolute w-5 fill-gray-500 transition">
-                                    <path d="M16.72 17.78a.75.75 0 1 0 1.06-1.06l-1.06 1.06ZM9 14.5A5.5 5.5 0 0 1 3.5 9H2a7 7 0 0 0 7 7v-1.5ZM3.5 9A5.5 5.5 0 0 1 9 3.5V2a7 7 0 0 0-7 7h1.5ZM9 3.5A5.5 5.5 0 0 1 14.5 9H16a7 7 0 0 0-7-7v1.5Zm3.89 10.45 3.83 3.83 1.06-1.06-3.83-3.83-1.06 1.06ZM14.5 9a5.48 5.48 0 0 1-1.61 3.89l1.06 1.06A6.98 6.98 0 0 0 16 9h-1.5Zm-1.61 3.89A5.48 5.48 0 0 1 9 14.5V16a6.98 6.98 0 0 0 4.95-2.05l-1.06-1.06Z"></path>
-                                </svg>
+                            <div class="relative text-gray-600">
+                                <input type="search" name="serch" placeholder="Search" wire:model.live="search"class="form control -white h-10 px-5 pr-10 rounded-full text-sm focus:outline-none">
+                                <button type="submit" class="absolute right-0 top-0 mt-3 mr-4">
+                                    <svg class="h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;" xml:space="preserve" width="512px" height="512px">
+                                    <path d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z"/>
+                                    </svg>
+                                </button>
                             </div>
                         </div>
-                        
                     </div>
     
                     <div class="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
@@ -46,11 +47,11 @@
                             <table class="w-full divide-y divide-gray-300">
                                 <thead>
                                 <tr>                                    
-									<th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">Title</th>
-									<th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">Description</th>
-									<th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">Date</th>
-									<th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">Time</th>
-									<th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">Created At</th>
+									<th scope="col" class="py-3 pl-4 pr-3 text-xs font-semibold uppercase tracking-wide text-gray-500">Title</th>
+									<th scope="col" class="py-3 pl-4 pr-3 text-xs font-semibold uppercase tracking-wide text-gray-500">Description</th>
+									<th scope="col" class="py-3 pl-4 pr-3 text-xs font-semibold uppercase tracking-wide text-gray-500">Date</th>
+									<th scope="col" class="py-3 pl-4 pr-3 text-xs font-semibold uppercase tracking-wide text-gray-500">Time</th>
+									<th scope="col" class="py-3 pl-4 pr-3 text-xs font-semibold uppercase tracking-wide text-gray-500">Created At</th>
 
                                     <th scope="col" class="px-3 py-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">Actions</th>
                                 </tr>
@@ -60,11 +61,11 @@
                                 @foreach ($appointments as $appointment)
                                     <tr class="even:bg-gray-50" wire:key="{{ $appointment->id }}">
                                     
-										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $appointment->title }}</td>
-										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $appointment->description }}</td>
-										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $appointment->date }}</td>
-										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $appointment->time }}</td>
-										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $appointment->created_at }}</td>
+										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 text-center">{{ $appointment->title }}</td>
+										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 text-center">{{ $appointment->description }}</td>
+										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 text-center">{{ $appointment->date }}</td>
+										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 text-center">{{ $appointment->time }}</td>
+										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 text-center">{{ $appointment->created_at }}</td>
 
                                         <td class="whitespace-nowrap py-4 pl-4 pr-4 text-sm font-medium text-gray-900">
                                             <a wire:navigate href="{{ route('appointments.show', $appointment->id) }}" >

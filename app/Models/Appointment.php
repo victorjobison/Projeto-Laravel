@@ -28,11 +28,14 @@ class Appointment extends Model
      *
      * @var array<int, string>
      */
-    protected $fillable = ['title', 'description', 'date', 'time'];
+    protected $fillable = ['title', 'description', 'date', 'time'/* ,'time_start', 'time_end','status','category','frequency',"id_user","name_user" */];
 
     public static function search($field, $keyword)
     {
         return self::where($field, 'ilike', '%' . $keyword . '%');
     }
-
+    public function appointment()
+{
+    return $this->belongsTo(Appointemnt::class);
+}
 }
