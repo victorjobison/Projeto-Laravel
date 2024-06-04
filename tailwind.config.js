@@ -16,8 +16,26 @@ export default {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+           
         },
     },
 
-    plugins: [forms, typography],
+    plugins: [
+        forms, 
+        typography,
+        function ({ addUtilities }) {
+            addUtilities({
+                '.bg-gradient::after': {
+                    content: '""',
+                    background: 'radial-gradient(500px circle at var(--mouse-x) var(--mouse-y), #FFA857, transparent 20%)',
+                },
+                '.classTest::-webkit-scrollbar': {
+                    display: 'none !important',
+                },
+                '.titlogin': {
+                    marginBottom: '10px !important',
+                },
+            }, ['responsive', 'hover']);
+        }
+    ],
 };

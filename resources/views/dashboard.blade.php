@@ -39,7 +39,7 @@
 
                      
                         <div class="mt-8 bg-white p-4 shadow rounded-lg">
-                            <h2 class="text-gray-500 text-lg font-semibold pb-4">Users</h2>
+                            <h2 class="text-gray-500 text-lg font-semibold pb-4">Users Information</h2>
                             <div class="my-1"></div> 
                             <div class="bg-gradient-to-r from-orange-300 to-orange-500 h-px mb-6"></div> 
                             <table class="w-full table-auto text-sm">
@@ -86,7 +86,7 @@
                         </div>
 
                         <div class="mt-8 bg-white p-4 shadow rounded-lg">
-                            <h2 class="text-gray-500 text-lg font-semibold pb-4">Appointments</h2>
+                            <h2 class="text-gray-500 text-lg font-semibold pb-4">Appointments Information</h2>
                             <div class="my-1"></div>
                             <div class="bg-gradient-to-r from-orange-300 to-orange-500 h-px mb-6"></div> 
                             <table class="w-full table-auto text-sm">

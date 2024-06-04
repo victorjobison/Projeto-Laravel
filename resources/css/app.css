@@ -6,12 +6,3 @@
 [x-cloak] {
     display: none;
 }
-.bg-gradient::after {
-    background: radial-gradient(500px circle at var(--mouse-x) var(--mouse-y), #FFA857, transparent 20%);
-}
-.classTest::-webkit-scrollbar {
-    display: none !important;   
-}
-.titlogin{
-    margin-bottom: 10px !important;
-}

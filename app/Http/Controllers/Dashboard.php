@@ -12,7 +12,7 @@ class Dashboard extends Controller
         // Recupera o número de usuários registrados
         $newUsersCount = User::whereDate('created_at', '=', now()->format('Y-m-d'))->count();
         $registeredUsersCount = User::count();
-
+        
         // Recupera o número de compromissos registrados
         $newAppointmentCount = Appointment::whereDate('created_at', '=', now()->format('Y-m-d'))->count();
         $registeredAppointmentCount = Appointment::count();
