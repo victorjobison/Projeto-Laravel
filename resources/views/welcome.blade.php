@@ -23,12 +23,29 @@
                         <div class="hidden sm:flex sm:items-center">
                         @if (Route::has('login'))
                             @auth
-                                <a
-                                    href="{{ url('/dashboard') }}"
+                                @if(Auth::user()->role == 'admin')
+                                     <a
+                                    href="{{ route('admin.dashboard') }}"
                                     class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-black dark:hover:text-black/80 dark:focus-visible:ring-white"
                                 >
                                     Dashboard
                                 </a>
+                                @elseif(Auth::user()->role == 'editor')
+                                    <a
+                                    href="{{ route('editor.dashboard') }}"
+                                    class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-black dark:hover:text-black/80 dark:focus-visible:ring-white"
+                                >
+                                    Dashboard
+                                </a>
+                                @elseif(Auth::user()->role == 'user')
+                                   <a
+                                    href="{{ route('user.dashboard') }}"
+                                    class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-black dark:hover:text-black/80 dark:focus-visible:ring-white"
+                                >
+                                    Dashboard
+                                </a>
+                                @endif
+                               
                             @else
                                 <a href="{{ route('login') }}" class="text-gray-800 text-sm font-semibold hover:text-gray-600 mr-4">
                                     Login
