@@ -14,12 +14,6 @@
         <x-input wire:model="form.password" id="password" name="password" type="password" :value="old('password')" class="mt-1 block w-full" autocomplete="password" required placeholder="Password"/>
        
     </div>
-    <div>
-        <x-label for="current_team_id" :value="__('Current Team Id')"/>
-        <x-input wire:model="form.current_team_id" id="current_team_id" name="current_team_id" :value="old('current_team_id')" type="number" class="mt-1 block w-full" autocomplete="current_team_id" required min="1" placeholder="Current Team Id"/>
-      
-
-    </div>
     <x-validation-errors class="mb-4" />
 
     <button

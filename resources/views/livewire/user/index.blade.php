@@ -46,7 +46,6 @@
                                     <th scope="col" class="py-3 pl-4 pr-3 text-center text-xs font-semibold uppercase tracking-wide text-gray-500">Profile Photo</th>
 									<th scope="col" class="py-3 pl-4 pr-3 text-center text-xs font-semibold uppercase tracking-wide text-gray-500">Name</th>
 									<th scope="col" class="py-3 pl-4 pr-3 text-center text-xs font-semibold uppercase tracking-wide text-gray-500">Email</th>
-									<th scope="col" class="py-3 pl-4 pr-3 text-center text-xs font-semibold uppercase tracking-wide text-gray-500">Current Team Id</th>
 									<th scope="col" class="py-3 pl-4 pr-3 text-center text-xs font-semibold uppercase tracking-wide text-gray-500">Actions</th>
 
                                 </tr>
@@ -58,9 +57,7 @@
                                             <img src="{{ $user->profile_photo_url }}" alt="User's Profile Photo" class="h-12 w-12 rounded-full object-cover">
                                         </td>
 										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 text-center">{{ $user->name }}</td>
-										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 text-center">{{ $user->email }}</td>
-										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 text-center">{{ $user->current_team_id }}</td>
-                                        
+										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500 text-center">{{ $user->email }}</td>                                        
 
                                         <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-medium text-gray-900 text-center">
                                             <a wire:navigate href="{{ route('users.show', $user->id) }}" >
